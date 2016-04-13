@@ -6,7 +6,7 @@ exports.handler = function(event, context){
 
   co(function* (){
     var bucket = event.Records[0].s3.bucket.name;
-    var key = decodeURIComponent(event.Records[0].s3.object.key.replace(/\+/g,''));
+    var key = decodeURIComponent(event.Records[0].s3.object.key.replace(/\+/g,' '));
     var params = {
       Bucket: bucket,
       Key: key

@@ -3,7 +3,7 @@ var s3 = new AWS.S3();
 
 exports.handler = function(event, context){
   var bucket = event.Records[0].s3.bucket.name;
-  var key = decodeURIComponent(event.Records[0].s3.object.key.replace(/\+/g,''));
+  var key = decodeURIComponent(event.Records[0].s3.object.key.replace(/\+/g,' '));
   var params = {
     Bucket: bucket,
     Key: key

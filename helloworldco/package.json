@@ -1,0 +1,17 @@
+{
+  "name": "helloworldco",
+  "version": "1.0.0",
+  "description": "在helloworldpromise的基础上更进一步,用了co",
+  "main": "index.js",
+  "dependencies": {
+    "aws-sdk": "^2.3.3",
+    "aws-sdk-promise": "0.0.2",
+    "co": "^4.6.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

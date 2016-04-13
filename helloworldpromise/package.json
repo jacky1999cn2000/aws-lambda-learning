@@ -1,0 +1,16 @@
+{
+  "name": "helloworldpromise",
+  "version": "1.0.0",
+  "description": "与helloworld基本一致,只不过利用了'aws-sdk-promise'(S3 bucket is still jz-lambda,and with helloworldpromise/ as prefix)",
+  "main": "index.js",
+  "dependencies": {
+    "aws-sdk": "^2.3.3",
+    "aws-sdk-promise": "0.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
