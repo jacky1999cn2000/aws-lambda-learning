@@ -28,5 +28,5 @@ An image uploading to [bucket]/imageprocessing/original folder will trigger the 
   fs_readFile('myfile.txt').then(console.log, console.error)
   ```
 2. now we have promises, and then can easily use co to write sync-like code
-3. S3 bucket key is like this: 'imageprocessing/original/image.jpg', so when uploading a file into 'imageprocessing/resized' folder as '100-image.jpg' as name, the key should be set to something like *Key: 'imageprocessing/resized/' + widths[index] + '-' + key.split('/')[2]* in the parameter (where widths is the array containing different width, and key is the key for the original image)
+3. [S3 bucket key is like this: 'imageprocessing/original/image.jpg', so when uploading a file into 'imageprocessing/resized' folder as '100-image.jpg' as name, the key should be set to something like *Key: 'imageprocessing/resized/' + widths[index] + '-' + key.split('/')[2]* in the parameter (where widths is the array containing different width, and key is the key for the original image)](http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html)
 4. use S3Fox add-on to delete folders
