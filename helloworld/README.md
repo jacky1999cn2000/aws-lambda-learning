@@ -47,5 +47,5 @@
         ]
     }
   ```
-  * Add 'S3:jackyzhao.helloworld' bucket as Event source so this lambda function can be triggered by this S3 bucket's ObjectCreate event
-  * Upload jacky.txt file into this specific S3 bucket and see logs in CloudWatch via Metrics subtab
+5. Add 'S3:jackyzhao.helloworld' bucket as Event source so this lambda function can be triggered by this S3 bucket's ObjectCreate event
+6. Upload jacky.txt file into this specific S3 bucket and see logs in CloudWatch via Metrics subtab
