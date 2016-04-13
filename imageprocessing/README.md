@@ -2,6 +2,7 @@
 
 ### what this lambda function do
 An image uploading to [bucket]/imageprocessing/original folder will trigger the function, and the function will do the following:
+
 1. retrieve the original image
 2. get 3 resized images using gm
 3. upload these 3 resized images to [bucket]/imageprocessing/resized folder with such name convention [width]-[original-image-name]
