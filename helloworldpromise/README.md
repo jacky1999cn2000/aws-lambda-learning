@@ -1,6 +1,6 @@
 #Lambda HelloWorldPromise
 
-与helloworld基本一致,只不过利用了'aws-sdk-promise'
+与helloworld基本一致,只不过利用了'aws-sdk-promise'(S3 bucket is still jz-lambda,and with helloworldpromise/ as prefix)
 
 *注意:*
 1. don't zip folder but zip content inside the folder, including node_modules folder
