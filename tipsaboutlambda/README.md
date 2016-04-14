@@ -1,6 +1,8 @@
-# What Saved in Memory
+# Tips about Lambda
 
-### Since lambda function was run in container, anything saved outside the handler can be considered as global memory (*in the first snippet below, 'ITEMS_TO_PROCESS' array can be read and modifired from any lambda function the is run on the container. If the function uses this array for future dictation of events, one function may wind up processing events pushed to the array from another function that has executed on the same container*), so don't save anything sensitive outside the handler.
+### What saved in memory
+
+Since lambda function was run in container, anything saved outside the handler can be considered as global memory (*in the first snippet below, 'ITEMS_TO_PROCESS' array can be read and modifired from any lambda function the is run on the container. If the function uses this array for future dictation of events, one function may wind up processing events pushed to the array from another function that has executed on the same container*), so don't save anything sensitive outside the handler.
 
 ```javascript
 var ITEMS_TO_PROCESS = [];
@@ -25,7 +27,7 @@ exports.handler = function(event, context) {
 };
 ```
 
-### However, it can be used as cache (probably need to clear cache periodically in order to release memory)
+However, it can be used as cache (probably need to clear cache periodically in order to release memory)
 
 ```javascript
 var CACHE = {};
@@ -44,9 +46,13 @@ exports.handler = function(event, context) {
 };
 ```
 
-### You may want to invoke your lambda function every 9 minutes (4800 per month) in order to avoid cold start
+### Cold Start vs Hot Start
 
-### In most of our examples, the event object passed into the invocation of the function has been predetermined by AWS; the format is fairly standard across multiple services. When invoking the function directly, either from the command line or the SDK, the event object is arbitrary. As a good development practice, I recommend standardizing on a common format for all of your events across all functions. Here is a quick example of a format I’ve used for almost all of the functions I’ve created.
+Lambda will remove code from a container if no request after 10 min. Therefore, in order to avoid a cold start, you may want to invoke your lambda function every 9 minutes (4800 per month) in order to avoid cold start
+
+### Mock event & context
+
+In most of our examples, the event object passed into the invocation of the function has been predetermined by AWS; the format is fairly standard across multiple services. When invoking the function directly, either from the command line or the SDK, the event object is arbitrary. As a good development practice, I recommend standardizing on a common format for all of your events across all functions. Here is a quick example of a format I’ve used for almost all of the functions I’ve created.
 
 ```javascript
 {
